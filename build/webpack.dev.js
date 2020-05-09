@@ -14,8 +14,13 @@ module.exports = (env) =>(merge(common(env), {
     hot: true,
     https: true,
     public: 'www.amipei.xyz',
+    publicPath: '/',
     open: true,
     host: '0.0.0.0',
+    overlay: {
+      warnings: true,
+      errors: true
+    },
     disableHostCheck: true,
     key: fs.readFileSync(path.resolve(__dirname, '../amipei.xyz.key')),
     cert: fs.readFileSync(path.resolve(__dirname, '../amipei.xyz.pem')),

@@ -57,6 +57,9 @@ module.exports = (env) => ({
         }
       }]
     }, {
+      test: /\.css$/,
+      use: ['style-loader','css-loader']
+    }, {
       test: /\.(scss|sass)$/,
       use: [
         env === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -71,8 +74,7 @@ module.exports = (env) => ({
       ]
     }]
   },
-  plugins: [
-  ],
+  plugins: [],
   optimization: {
     runtimeChunk: true,
     splitChunks: {
